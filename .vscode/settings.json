@@ -1,0 +1,8 @@
+{
+    "liveshare.allowGuestDebugControl": true,
+    "liveshare.allowGuestTaskControl": true,
+    "liveshare.guestApprovalRequired": false,
+    "liveshare.languages.allowGuestCommandControl": false,
+    "liveshare.notebooks.allowGuestExecuteCells": true,
+    "java.dependency.packagePresentation": "hierarchical"
+}
