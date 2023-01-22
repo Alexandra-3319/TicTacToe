@@ -18,7 +18,7 @@ The current version of the builder has three layers of specification:
   2. the TextBuilder, this is a builder that adds line breaks to four strings, and that has a get() function.
   3. the instance introductionBuilder, this is an instance of the TextBuilder that specifially outputs an introduction to our game.
 
-    the code snippet below describes the working best, it simply takes the _text variable and adds line breaks to it. it then outputs this variable.
+the code snippet below describes the working best, it simply takes the _text variable and adds line breaks to it. it then outputs this variable.
 
 from [TextBuilder](/src/com/hz/TextBuilder.java):
 _________________
