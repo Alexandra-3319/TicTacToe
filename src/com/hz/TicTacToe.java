@@ -2,7 +2,6 @@ package com.hz;
 
 import java.util.function.ToIntFunction;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,17 +26,12 @@ public class TicTacToe {
         while (true) {
             ConsoleReader reader = new ConsoleReader();
             InputAdapter adapter = new InputAdapter(reader);
-            System.out.println(adapter.readResponse());
 
-            Scanner scan = new Scanner(System.in);
-            // System.out.println("Enter your placement (1-9):");
-
-            // String playerPos = reader.readLine();
-            int playerPos = scan.nextInt();
+            int playerPos = adapter.readResponse();
 
             while (playerPositions.contains(playerPos) || cpuPositions.contains(playerPos)) {
                 System.out.println("Position taken! Enter a correct position");
-                playerPos = scan.nextInt();
+                playerPos = adapter.readResponse();
             }
 
             placePiece(gameBoard, playerPos, "player");
