@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import com.hz.IntroductionBuilder;
+
 
 public class TicTacToe {
 
@@ -13,8 +13,9 @@ public class TicTacToe {
     static ArrayList<Integer> cpuPositions = new ArrayList<Integer>();
 
     public static void main(String[] args) {
-        IntroductionBuilder introductionbuilder = new IntroductionBuilder();
-        System.out.println(introductionbuilder.getIntroduction());
+
+        introduce();
+
         char[][] gameBoard = {
                 { ' ', '|', ' ', '|', ' ' },
                 { '-', '+', '-', '+', '-' },
@@ -143,5 +144,16 @@ public class TicTacToe {
             }
         }
         return "";
+    }
+
+
+    public static void introduce() {
+        TextBuilder introductionbuilder = new TextBuilder(); //uses the Textbuilder class as an introduction builder
+        System.out.println(introductionbuilder.getText(
+            "Welcome player, to our fantastic CLI tic-tac-toe game.",
+            "You will be matched up against our enhanced algorythm that dynamically makes its moves based on RNG-powered-decisionmaking",
+            "Simply enter a number on your turn, and a cross will be placed in the corresponding square. If you don't know the rules of tic-tac-toe, google them.",
+            "Good luck! ☺"
+        ));
     }
 }
