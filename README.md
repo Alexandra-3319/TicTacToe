@@ -1,3 +1,5 @@
+This code can also be viewed at: https://github.com/Alexandra-3319/TicTacToe.git
+
 TicTacToe game:
 Alexandra en Tijn
 
