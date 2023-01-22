@@ -44,17 +44,13 @@ public class InputAdapter {
         }
 
         public Integer isConvered(String answer) {
-                // try {
-                        int place = 0;
-                        for (int i = 0; i < 9; i++) {
-                                        if (Arrays.asList(InputAdapter.Choices[i]).contains(answer)) {
-                                                place = i + 1;
-                                        } 
-                                }
-                        return place;
-                // } catch (Exception e) {
-                //         return 0;
-                // }
+                int place = 0;
+                for (int i = 0; i < 9; i++) {
+                        if (Arrays.asList(InputAdapter.Choices[i]).contains(answer)) {
+                                place = i + 1;
+                        }
+                }
+                return place;
         }
 
 }
