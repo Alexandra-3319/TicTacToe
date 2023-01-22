@@ -6,6 +6,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import com.hz.IntroductionBuilder;
 
 public class TicTacToe {
 
@@ -13,7 +14,8 @@ public class TicTacToe {
     static ArrayList<Integer> cpuPositions = new ArrayList<Integer>();
 
     public static void main(String[] args) {
-
+        IntroductionBuilder introductionbuilder = new IntroductionBuilder();
+        System.out.println(introductionbuilder.getIntroduction());
         char[][] gameBoard = {
                 { ' ', '|', ' ', '|', ' ' },
                 { '-', '+', '-', '+', '-' },
@@ -25,8 +27,10 @@ public class TicTacToe {
         while (true) {
             ConsoleReader reader = new ConsoleReader();
             InputAdapter adapter = new InputAdapter(reader);
+            System.out.println(adapter.readResponse());
+
             Scanner scan = new Scanner(System.in);
-            System.out.println("Enter your placement (1-9):");
+            // System.out.println("Enter your placement (1-9):");
 
             // String playerPos = reader.readLine();
             int playerPos = scan.nextInt();
