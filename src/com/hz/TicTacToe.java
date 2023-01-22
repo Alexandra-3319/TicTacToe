@@ -39,7 +39,7 @@ public class TicTacToe {
                 System.out.println("Position taken! Enter a correct position");
                 playerPos = scan.nextInt();
             }
-
+            
             placePiece(gameBoard, playerPos, "player");
 
             String result = checkWinner();
