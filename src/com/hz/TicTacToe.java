@@ -1,6 +1,5 @@
 package com.hz;
 
-import java.util.function.ToIntFunction;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,6 +10,7 @@ public class TicTacToe {
 
     static ArrayList<Integer> playerPositions = new ArrayList<Integer>();
     static ArrayList<Integer> cpuPositions = new ArrayList<Integer>();
+    private static Pieces piece;
 
     public static void main(String[] args) {
 
@@ -64,42 +64,42 @@ public class TicTacToe {
     }
 
     public static void placePiece(char[][] gameBoard, int pos, String user) {
-        char symbol = ' ';
+        // char symbol = ' ';
         if (user.equals("player")) {
-            symbol = 'X';
+            piece = new PlayerPieces();
             playerPositions.add(pos);
         } else if (user.equals("cpu")) {
-            symbol = 'O';
+            piece = new CPUPieces();
             cpuPositions.add(pos);
         }
 
         switch (pos) {
             case 1:
-                gameBoard[0][0] = symbol;
+                gameBoard[0][0] = piece.symbol();
                 break;
             case 2:
-                gameBoard[0][2] = symbol;
+                gameBoard[0][2] = piece.symbol();
                 break;
             case 3:
-                gameBoard[0][4] = symbol;
+                gameBoard[0][4] = piece.symbol();
                 break;
             case 4:
-                gameBoard[2][0] = symbol;
+                gameBoard[2][0] = piece.symbol();
                 break;
             case 5:
-                gameBoard[2][2] = symbol;
+                gameBoard[2][2] = piece.symbol();
                 break;
             case 6:
-                gameBoard[2][4] = symbol;
+                gameBoard[2][4] = piece.symbol();
                 break;
             case 7:
-                gameBoard[4][0] = symbol;
+                gameBoard[4][0] = piece.symbol();
                 break;
             case 8:
-                gameBoard[4][2] = symbol;
+                gameBoard[4][2] = piece.symbol();
                 break;
             case 9:
-                gameBoard[4][4] = symbol;
+                gameBoard[4][4] = piece.symbol();
                 break;
         }
     }
