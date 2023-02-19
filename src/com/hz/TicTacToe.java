@@ -2,7 +2,6 @@ package com.hz;
 
 import java.util.*;
 
-
 public class TicTacToe {
 
     static ArrayList<Integer> playerPositions = new ArrayList<Integer>();
@@ -61,7 +60,6 @@ public class TicTacToe {
 
     public static void placePiece(char[][] gameBoard, int pos, String user) {
         PieceFactory pieceFactory = new PieceFactory();
-        // Shape shape = shapeFactory.getShape("CIRCLE");
         char symbol = ' ';
         if (user.equals("player")) {
             Piece piece = pieceFactory.getPiece("CROSS");
@@ -157,15 +155,12 @@ public class TicTacToe {
                         "       _      _                   ",
                         "      (_)    | |                  ",
                         "__   ___  ___| |_ ___  _ __ _   _ ",
-                        "\\ \\ / / |/ __| __/ _ \\| '__| | | |"
-
-                );
+                        "\\ \\ / / |/ __| __/ _ \\| '__| | | |");
                 System.out.println(artbuilder.getText(
                         " \\ V /| | (__| || (_) | |  | |_| |",
                         "  \\_/ |_|\\___|\\__\\___/|_|   \\__, |",
                         "                             __/ |",
-                        "                            |___/ "
-                ));
+                        "                            |___/ "));
                 break;
             case 1:
                 artbuilder.getText(
@@ -179,34 +174,31 @@ public class TicTacToe {
                         " | |_| | (_) | |_| | | | (_) \\__ \\  __/",
                         "  \\__, |\\___/ \\__,_| |_|\\___/|___/\\___|",
                         "   __/ |                               ",
-                        "  |___/                                "
-                ));
+                        "  |___/                                "));
                 break;
             default:
                 artbuilder.getText(
                         "  _______ _      ",
                         " |__   __(_)     ",
                         "    | |   _  ___ ",
-                        "    | |  | |/ _ \\"
-                );
+                        "    | |  | |/ _ \\");
                 System.out.println(artbuilder.getText(
                         "    | |  | |  __/",
                         "    |_|  |_|\\___|",
                         "                 ",
-                        "                 "
-                ));
+                        "                 "));
                 break;
         }
 
     }
 
     public static void introduce() {
-        IntroductionBuilder introductionbuilder = new IntroductionBuilder(); //uses the Textbuilder class as an introduction builder
+        IntroductionBuilder introductionbuilder = new IntroductionBuilder(); // uses the Textbuilder class as an
+                                                                             // introduction builder
         System.out.println(introductionbuilder.getText(
-            "Welcome player, to our fantastic CLI tic-tac-toe game.",
-            "You will be matched up against our enhanced algorythm that dynamically makes its moves based on RNG-powered-decisionmaking",
-            "Simply enter a number on your turn, and a cross will be placed in the corresponding square. If you don't know the rules of tic-tac-toe, google them.",
-            "Good luck! ☺"
-        ));
+                "Welcome player, to our fantastic CLI tic-tac-toe game.",
+                "You will be matched up against our enhanced algorythm that dynamically makes its moves based on RNG-powered-decisionmaking",
+                "Simply enter a number on your turn, and a cross will be placed in the corresponding square. If you don't know the rules of tic-tac-toe, google them.",
+                "Good luck! ☺"));
     }
 }
