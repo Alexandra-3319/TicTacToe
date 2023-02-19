@@ -1,9 +1,7 @@
 package com.hz;
 
-import java.util.Random;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+
 
 public class TicTacToe {
 
@@ -138,22 +136,77 @@ public class TicTacToe {
 
         for (List l : winning) {
             if (playerPositions.containsAll(l)) {
+                displayEndArt(0);
                 return "Congratulations you won!";
             } else if (cpuPositions.containsAll(l)) {
+                displayEndArt(1);
                 return "CPU wins! Sorry :(";
             } else if (playerPositions.size() + cpuPositions.size() == 9) {
-                return "CAT!";
+                displayEndArt(2);
+                return "It's a tie!";
             }
         }
         return "";
     }
 
+    private static void displayEndArt(Integer result) {
+        ArtBuilder artbuilder = new ArtBuilder();
+        switch (result) {
+            case 0:
+                artbuilder.getText(
+                        "       _      _                   ",
+                        "      (_)    | |                  ",
+                        "__   ___  ___| |_ ___  _ __ _   _ ",
+                        "\\ \\ / / |/ __| __/ _ \\| '__| | | |"
+
+                );
+                System.out.println(artbuilder.getText(
+                        " \\ V /| | (__| || (_) | |  | |_| |",
+                        "  \\_/ |_|\\___|\\__\\___/|_|   \\__, |",
+                        "                             __/ |",
+                        "                            |___/ "
+                ));
+                break;
+            case 1:
+                artbuilder.getText(
+                        "                      _                ",
+                        "                     | |               ",
+                        "  _   _  ___  _   _  | | ___  ___  ___ ",
+                        " | | | |/ _ \\| | | | | |/ _ \\/ __|/ _ \\"
+
+                );
+                System.out.println(artbuilder.getText(
+                        " | |_| | (_) | |_| | | | (_) \\__ \\  __/",
+                        "  \\__, |\\___/ \\__,_| |_|\\___/|___/\\___|",
+                        "   __/ |                               ",
+                        "  |___/                                "
+                ));
+                break;
+            default:
+                artbuilder.getText(
+                        "  _______ _      ",
+                        " |__   __(_)     ",
+                        "    | |   _  ___ ",
+                        "    | |  | |/ _ \\"
+                );
+                System.out.println(artbuilder.getText(
+                        "    | |  | |  __/",
+                        "    |_|  |_|\\___|",
+                        "                 ",
+                        "                 "
+                ));
+                break;
+        }
+
+    }
+
     public static void introduce() {
-        TextBuilder introductionbuilder = new TextBuilder(); // uses the Textbuilder class as an introduction builder
+        IntroductionBuilder introductionbuilder = new IntroductionBuilder(); //uses the Textbuilder class as an introduction builder
         System.out.println(introductionbuilder.getText(
-                "Welcome player, to our fantastic CLI tic-tac-toe game.",
-                "You will be matched up against our enhanced algorythm that dynamically makes its moves based on RNG-powered-decisionmaking",
-                "Simply enter a number on your turn, and a cross will be placed in the corresponding square. If you don't know the rules of tic-tac-toe, google them.",
-                "Good luck! ☺"));
+            "Welcome player, to our fantastic CLI tic-tac-toe game.",
+            "You will be matched up against our enhanced algorythm that dynamically makes its moves based on RNG-powered-decisionmaking",
+            "Simply enter a number on your turn, and a cross will be placed in the corresponding square. If you don't know the rules of tic-tac-toe, google them.",
+            "Good luck! ☺"
+        ));
     }
 }

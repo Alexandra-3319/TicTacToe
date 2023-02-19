@@ -12,7 +12,7 @@ us making the base game and implementing the stragegy pattern (also made this fi
 
 Design patterns implemented:
 
-1. [Builder](/src/com/hz/TextBuilder.java) (by Tijn)
+1. [Builder](/src/com/hz/IntroductionBuilder.java) (by Tijn)
 The builder class (named TextBuilder.java) takes four input Strings and adds /ln between them to make sure they appear properly in the console. I initially experimented with a much broader approach that also used a Director, but I found this unnecessarily complicated because this function would only be called once anyways.
 I had also initially named the builder IntroductionBuilder, but I figured that it would be best to keep this class broad, because of course it can be used for more than just building the introduction.
 The current version of the builder has three layers of specification:
@@ -22,7 +22,7 @@ The current version of the builder has three layers of specification:
 
 the code snippet below describes the working best, it simply takes the _text variable and adds line breaks to it. it then outputs this variable.
 
-from [TextBuilder](/src/com/hz/TextBuilder.java):
+from [TextBuilder](/src/com/hz/IntroductionBuilder.java):
 _________________
 
    @Override
@@ -107,7 +107,7 @@ public interface builder { //interface for a builder that uses strings
 }
 _________________
 
-from [TextBuilder](/src/com/hz/TextBuilder.java):
+from [TextBuilder](/src/com/hz/IntroductionBuilder.java):
 _________________
 
 public class TextBuilder implements builder { //a builder to seperate lines of text into a more readable format.
