@@ -5,12 +5,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
 public class TicTacToe {
 
     static ArrayList<Integer> playerPositions = new ArrayList<Integer>();
     static ArrayList<Integer> cpuPositions = new ArrayList<Integer>();
-    private static Pieces piece;
 
     public static void main(String[] args) {
 
@@ -34,7 +32,7 @@ public class TicTacToe {
                 System.out.println("Position taken! Enter a correct position");
                 playerPos = adapter.readResponse();
             }
-            
+
             placePiece(gameBoard, playerPos, "player");
 
             String result = checkWinner();
@@ -64,42 +62,46 @@ public class TicTacToe {
     }
 
     public static void placePiece(char[][] gameBoard, int pos, String user) {
-        // char symbol = ' ';
+        PieceFactory pieceFactory = new PieceFactory();
+        // Shape shape = shapeFactory.getShape("CIRCLE");
+        char symbol = ' ';
         if (user.equals("player")) {
-            piece = new PlayerPieces();
+            Piece piece = pieceFactory.getPiece("CROSS");
+            symbol = piece.draw();
             playerPositions.add(pos);
         } else if (user.equals("cpu")) {
-            piece = new CPUPieces();
+            Piece piece = pieceFactory.getPiece("CIRCLE");
+            symbol = piece.draw();
             cpuPositions.add(pos);
         }
 
         switch (pos) {
             case 1:
-                gameBoard[0][0] = piece.symbol();
+                gameBoard[0][0] = symbol;
                 break;
             case 2:
-                gameBoard[0][2] = piece.symbol();
+                gameBoard[0][2] = symbol;
                 break;
             case 3:
-                gameBoard[0][4] = piece.symbol();
+                gameBoard[0][4] = symbol;
                 break;
             case 4:
-                gameBoard[2][0] = piece.symbol();
+                gameBoard[2][0] = symbol;
                 break;
             case 5:
-                gameBoard[2][2] = piece.symbol();
+                gameBoard[2][2] = symbol;
                 break;
             case 6:
-                gameBoard[2][4] = piece.symbol();
+                gameBoard[2][4] = symbol;
                 break;
             case 7:
-                gameBoard[4][0] = piece.symbol();
+                gameBoard[4][0] = symbol;
                 break;
             case 8:
-                gameBoard[4][2] = piece.symbol();
+                gameBoard[4][2] = symbol;
                 break;
             case 9:
-                gameBoard[4][4] = piece.symbol();
+                gameBoard[4][4] = symbol;
                 break;
         }
     }
@@ -146,14 +148,12 @@ public class TicTacToe {
         return "";
     }
 
-
     public static void introduce() {
-        TextBuilder introductionbuilder = new TextBuilder(); //uses the Textbuilder class as an introduction builder
+        TextBuilder introductionbuilder = new TextBuilder(); // uses the Textbuilder class as an introduction builder
         System.out.println(introductionbuilder.getText(
-            "Welcome player, to our fantastic CLI tic-tac-toe game.",
-            "You will be matched up against our enhanced algorythm that dynamically makes its moves based on RNG-powered-decisionmaking",
-            "Simply enter a number on your turn, and a cross will be placed in the corresponding square. If you don't know the rules of tic-tac-toe, google them.",
-            "Good luck! ☺"
-        ));
+                "Welcome player, to our fantastic CLI tic-tac-toe game.",
+                "You will be matched up against our enhanced algorythm that dynamically makes its moves based on RNG-powered-decisionmaking",
+                "Simply enter a number on your turn, and a cross will be placed in the corresponding square. If you don't know the rules of tic-tac-toe, google them.",
+                "Good luck! ☺"));
     }
 }
